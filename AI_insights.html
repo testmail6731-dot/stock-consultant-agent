@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Stitch Design</title>
+<link href="data:image/x-icon;base64," rel="icon" type="image/x-icon"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script>
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              primary: "#06f1f9",
+              "background-light": "#f5f8f8",
+              "background-dark": "#0f2223",
+            },
+            fontFamily: {
+              display: ["Inter"],
+            },
+            borderRadius: {
+              DEFAULT: "0.5rem",
+              lg: "1rem",
+              xl: "1.5rem",
+              full: "9999px",
+            },
+          },
+        },
+      };
+    </script>
+<style>
+      .glassmorphism {
+        background: rgba(255, 255, 255, 0.05);
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+      }
+      .typing-indicator span {
+        animation: a-typing 1.5s infinite;
+      }
+      @keyframes a-typing {
+        0%,
+        100% {
+          opacity: 0.2;
+        }
+        50% {
+          opacity: 1;
+        }
+      }
+      .typing-indicator span:nth-child(2) {
+        animation-delay: 0.2s;
+      }
+      .typing-indicator span:nth-child(3) {
+        animation-delay: 0.4s;
+      }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-display text-white">
+<div class="relative flex min-h-screen w-full flex-col overflow-x-hidden">
+<div class="absolute inset-0 z-0 h-full w-full bg-background-light dark:bg-background-dark bg-[radial-gradient(#ffffff0a_1px,transparent_1px)] dark:bg-[radial-gradient(#ffffff0a_1px,transparent_1px)] [background-size:16px_16px]"></div>
+<div class="relative z-10 flex h-full grow flex-col">
+<header class="flex items-center justify-between whitespace-nowrap border-b border-white/10 px-4 py-3 sm:px-6 lg:px-10">
+<div class="flex items-center gap-3">
+<div class="size-8 text-primary">
+<svg fill="none" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+<path d="M24 45.8096C19.6865 45.8096 15.4698 44.5305 11.8832 42.134C8.29667 39.7376 5.50128 36.3314 3.85056 32.3462C2.19985 28.361 1.76794 23.9758 2.60947 19.7452C3.451 15.5145 5.52816 11.6284 8.57829 8.5783C11.6284 5.52817 15.5145 3.45101 19.7452 2.60948C23.9758 1.76795 28.361 2.19986 32.3462 3.85057C36.3314 5.50129 39.7376 8.29668 42.134 11.8833C44.5305 15.4698 45.8096 19.6865 45.8096 24L24 24L24 45.8096Z" fill="currentColor"></path>
+</svg>
+</div>
+<h2 class="text-lg font-bold">Stock Advisor</h2>
+</div>
+<nav class="hidden items-center gap-6 md:flex">
+<a class="text-sm font-medium text-white/80 transition-colors hover:text-white" href="index.html">Dashboard</a>
+<a class="text-sm font-medium text-white/80 transition-colors hover:text-white" href="portfolio.html">Portfolio</a>
+<a class="text-sm font-medium text-white/80 transition-colors hover:text-white" href="Market_trends.html">Research</a>
+<!--<a class="text-sm font-medium text-white/80 transition-colors hover:text-white" href="AI_insights.html">News</a>-->
+<!--<a class="text-sm font-bold text-primary" href="#">AI Advisor</a>-->
+</nav>
+<div class="flex items-center gap-4">
+<button class="flex h-10 w-10 items-center justify-center rounded-full bg-white/10 text-white/80 transition-colors hover:bg-white/20 hover:text-white">
+<svg fill="currentColor" height="20px" viewBox="0 0 256 256" width="20px" xmlns="http://www.w3.org/2000/svg">
+<path d="M221.8,175.94C216.25,166.38,208,139.33,208,104a80,80,0,1,0-160,0c0,35.34-8.26,62.38-13.81,71.94A16,16,0,0,0,48,200H88.81a40,40,0,0,0,78.38,0H208a16,16,0,0,0,13.8-24.06ZM128,216a24,24,0,0,1-22.62-16h45.24A24,24,0,0,1,128,216ZM48,184c7.7-13.24,16-43.92,16-80a64,64,0,1,1,128,0c0,36.05,8.28,66.73,16,80Z"></path>
+</svg>
+</button>
+<div class="size-10 rounded-full bg-cover bg-center bg-no-repeat" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBofrfeqXP3OEiwXkI4u-_zE4nNWAGXbJ_DOg5Ou74ndDYaJVHtm5uMoDuzqYPQL5Wp8wkpRrBN1T-l6SpLU7mxc_emotwQgAYqdlGLn3sRxg-DbnKT-D22iN1EhezEdfdm-5Ft_yxv21rXmJdL9g3hOPj411XH6zA2CyWpMReIOSXLRQZe2jAiaVLtjbD67LtG22Ba28SH8MP9JLhXpmn_iA1IMcS28nPrWcnomDCs4ayA6gJ4i2loZ0t3x7K_FTc0kk-CDTyXIyh4");'></div>
+</div>
+</header>
+<main class="flex flex-1 justify-center px-4 py-5 sm:px-6 lg:px-8">
+<div class="w-full max-w-4xl">
+<div class="flex flex-col items-center justify-between gap-4 p-4 sm:flex-row">
+<h1 class="text-3xl font-bold tracking-tight">AI Advisor</h1>
+<div class="relative w-full max-w-sm">
+<div class="pointer-events-none absolute inset-y-0 left-0 flex items-center pl-3">
+<svg class="h-5 w-5 text-primary/70" fill="currentColor" height="24px" viewBox="0 0 256 256" width="24px" xmlns="http://www.w3.org/2000/svg">
+<path d="M229.66,218.34l-50.07-50.06a88.11,88.11,0,1,0-11.31,11.31l50.06,50.07a8,8,0,0,0,11.32-11.32ZM40,112a72,72,0,1,1,72,72A72.08,72.08,0,0,1,40,112Z"></path>
+</svg>
+</div>
+<input class="form-input w-full rounded-full border-none bg-white/5 py-2 pl-10 pr-4 text-base text-white placeholder:text-white/50 focus:bg-white/10 focus:outline-none focus:ring-2 focus:ring-primary/50" placeholder="Search for stocks..." value=""/>
+</div>
+</div>
+<div class="mt-8 space-y-8">
+<div class="flex items-start gap-4">
+<div class="mt-1.5 flex h-8 w-8 flex-shrink-0 items-center justify-center rounded-full bg-primary/20 text-primary">
+<svg fill="currentColor" height="20" viewBox="0 0 256 256" width="20" xmlns="http://www.w3.org/2000/svg">
+<path d="M224,128a96,96,0,1,1-96-96A96,96,0,0,1,224,128ZM128,56v88a16,16,0,0,0,16,16h40a16,16,0,0,0,0-32h-24V56a16,16,0,0,0-32,0Z"></path>
+</svg>
+</div>
+<div class="flex-1 rounded-xl rounded-tl-none border border-white/10 bg-white/5 p-5 glassmorphism">
+<div class="mb-4 flex items-center gap-2">
+<p class="text-base font-bold text-primary">AI is thinking</p>
+<div class="typing-indicator flex items-center gap-1">
+<span class="h-1.5 w-1.5 rounded-full bg-primary"></span>
+<span class="h-1.5 w-1.5 rounded-full bg-primary"></span>
+<span class="h-1.5 w-1.5 rounded-full bg-primary"></span>
+</div>
+</div>
+<div class="space-y-6">
+<div class="flex flex-col items-start gap-4 md:flex-row">
+<div class="flex-1">
+<p class="text-xl font-bold text-white">Buy: TechCorp Inc. (TCI)</p>
+<p class="mt-1 text-sm text-white/70">
+<span class="font-semibold">Price:</span> $150.25 | <span class="font-semibold">Confidence:</span> 95%
+                        </p>
+<p class="mt-2 text-sm text-white/90">
+                          Strong growth potential in the tech sector, positive analyst ratings, and recent product launch success.
+                        </p>
+</div>
+<div class="w-full flex-shrink-0 rounded-lg md:w-48">
+<img alt="TechCorp Inc. Graph" class="h-auto w-full rounded-lg object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBdNyp5d7ybRGthPe-FcFwhw1I8sjqFROuLyHd_8LArHobHtujyQ-uzGkDBMZkHFRJLPHeiV04884BkuI36SwVzSk-AdPbrZ4FDkVSpyRRvhj7rUn6eM_GkO1zbaKNENx7jvmosbbczK_QfHR5yew3YWfnosUEkt7-cCqwdG6lokLWcvewpL_KVBHvM8qdJUL6QIkpG_ko8Zc6pa6jSFO5FbAytCr2nZYKhrU2SEFKiEu5HE3_T_Zagg2lGQDGoBk9XMLXknAM5SlUQ"/>
+</div>
+</div>
+<div class="flex flex-col items-start gap-4 md:flex-row">
+<div class="flex-1">
+<p class="text-xl font-bold text-white">Sell: BioMed Solutions (BMS)</p>
+<p class="mt-1 text-sm text-white/70">
+<span class="font-semibold">Price:</span> $85.75 | <span class="font-semibold">Confidence:</span> 80%
+                        </p>
+<p class="mt-2 text-sm text-white/90">
+                          Declining market share, negative news regarding clinical trials, and increased competition.
+                        </p>
+</div>
+<div class="w-full flex-shrink-0 rounded-lg md:w-48">
+<img alt="BioMed Solutions Graph" class="h-auto w-full rounded-lg object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCdIfQj0crNjOqAhUj-X5aikQm0EELkwc7ZIQBuDqFzNupBU8f41ncjsb7aaHo7Ca-aCyJZy7g3hjefKjJBkZXFt9InHRrT1uua23GFPPjpcMCiyqIgTJvUyJW-9gcxtKbFReG5ZJsuRWAmgBHENd6YDkM4qaScLbCDAguWsbbkwXch4S2u4plhY1bn37a2IJ0JpcTiwIK1FkPzxBFLp55tPi9WYFju2C1bZanDCJbDeOy1wVXpyKEYuZBdLWYfKn_1UiGDG3d0SaEM"/>
+</div>
+</div>
+<div class="flex flex-col items-start gap-4 md:flex-row">
+<div class="flex-1">
+<p class="text-xl font-bold text-white">Hold: Global Energy (GE)</p>
+<p class="mt-1 text-sm text-white/70">
+<span class="font-semibold">Price:</span> $220.50 | <span class="font-semibold">Confidence:</span> 70%
+                        </p>
+<p class="mt-2 text-sm text-white/90">
+                          Stable performance, but uncertain future due to regulatory changes and market volatility.
+                        </p>
+</div>
+<div class="w-full flex-shrink-0 rounded-lg md:w-48">
+<img alt="Global Energy Graph" class="h-auto w-full rounded-lg object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDqLqcbYoHzrboH25gt0F9PLzEGE3Xbl9Qjqidw5dkyBq8iNm4ZKxiYWGmC9JLE1NaruvqQlpYMsFYo5gcEJLUPLy6BXzX6GXDeBVx1bdPKbC8Lb8ZtqVyoTu5YALbuS-96eoI7R9Vsm5jMr84i_EHDGutyS6i1B0FCXtvVn1CFpbKJdm3nV11wkrCg63I3CqNj1Qhouos4-OhfB0ptC9c7zfyY1BkDmNnzVsASmbQK-k0lIJbScV5hLh0oDtWbISWXNvoN_LCV3klU"/>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</main>
+</div>
+</div>
+
+</body></html>
