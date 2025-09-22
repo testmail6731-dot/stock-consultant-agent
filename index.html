@@ -1,356 +1,193 @@
 <!DOCTYPE html>
-<html class="dark" lang="en">
-<head>
-    <meta charset="UTF-8">
-    <link crossorigin="" href="https://fonts.gstatic.com/" rel="preconnect"/>
-    <link as="style" href="https://fonts.googleapis.com/css2?display=swap&amp;family=Inter%3Awght%40400%3B500%3B700%3B900&amp;family=Noto+Sans%3Awght%40400%3B500%3B700%3B900" onload="this.rel='stylesheet'" rel="stylesheet"/>
-    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet"/>
-    <title>Stitch Design</title>
-    <link href="data:image/x-icon;base64," rel="icon" type="image/x-icon"/>
-    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-    <script id="tailwind-config">
-        tailwind.config = {
-            darkMode: "class",
-            theme: {
-                extend: {
-                    colors: {
-                        "primary": "#06f1f9",
-                        "background-light": "#f5f8f8",
-                        "background-dark": "#0f2223",
-                    },
-                    fontFamily: {
-                        "display": ["Inter"]
-                    },
-                    borderRadius: {"DEFAULT": "0.5rem", "lg": "1rem", "xl": "1.5rem", "full": "9999px"},
-                },
-            },
-        }
-    </script>
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>StockWise - Registration</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<style>
+    @keyframes float {
+      0% {
+        transform: translateY(0px);
+      }
+      50% {
+        transform: translateY(-20px);
+      }
+      100% {
+        transform: translateY(0px);
+      }
+    }
+    @keyframes subtle-glow {
+      0%,
+      100% {
+        box-shadow: 0 0 5px 0px rgba(6, 241, 249, 0.2);
+      }
+      50% {
+        box-shadow: 0 0 20px 5px rgba(6, 241, 249, 0.4);
+      }
+    }
+    .icon-glow {
+      animation: subtle-glow 5s ease-in-out infinite;
+    }
+    .floating-icon {
+      animation: float 6s ease-in-out infinite;
+    }
+    .background-pattern {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+      z-index: 0;
+    }
+    .background-pattern svg {
+      position: absolute;
+      opacity: 0.05;
+      color: #06f1f9;
+      animation: float 10s ease-in-out infinite alternate;
+    }
+  </style>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "primary": "#06f1f9",
+            "background-light": "#f5f8f8",
+            "background-dark": "#0f2223",
+          },
+          fontFamily: {
+            "display": ["Inter"]
+          },
+          borderRadius: {
+            "DEFAULT": "0.5rem",
+            "lg": "1rem",
+            "xl": "1.5rem",
+            "full": "9999px"
+          },
+        },
+      },
+    }
+  </script>
 </head>
-<body class="bg-background-light dark:bg-background-dark font-display text-gray-800 dark:text-gray-200">
-<div class="relative flex min-h-screen w-full flex-col">
-    <div class="flex h-full grow flex-col">
-        <header class="flex items-center justify-between whitespace-nowrap border-b border-primary/20 px-10 py-3">
-            <div class="flex items-center gap-4">
-                <div class="h-6 w-6 text-primary">
-                    <svg fill="none" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M24 45.8096C19.6865 45.8096 15.4698 44.5305 11.8832 42.134C8.29667 39.7376 5.50128 36.3314 3.85056 32.3462C2.19985 28.361 1.76794 23.9758 2.60947 19.7452C3.451 15.5145 5.52816 11.6284 8.57829 8.5783C11.6284 5.52817 15.5145 3.45101 19.7452 2.60948C23.9758 1.76795 28.361 2.19986 32.3462 3.85057C36.3314 5.50129 39.7376 8.29668 42.134 11.8833C44.5305 15.4698 45.8096 19.6865 45.8096 24L24 24L24 45.8096Z" fill="currentColor"></path>
-                    </svg>
-                </div>
-                <h2 class="text-lg font-bold tracking-tight text-gray-900 dark:text-white">StockWise</h2>
-            </div>
-            <div class="flex flex-1 items-center justify-end gap-6">
-                <div class="flex items-center gap-2">
-                    <button class="flex h-10 w-10 cursor-pointer items-center justify-center rounded-full bg-background-light text-gray-700 shadow-sm ring-1 ring-inset ring-gray-300 transition-all hover:bg-gray-50 dark:bg-background-dark dark:text-gray-300 dark:ring-gray-700 dark:hover:bg-primary/10">
-                        <span class="material-symbols-outlined text-xl">notifications</span>
-                    </button>
-                    <button class="flex h-10 w-10 cursor-pointer items-center justify-center rounded-full bg-background-light text-gray-700 shadow-sm ring-1 ring-inset ring-gray-300 transition-all hover:bg-gray-50 dark:bg-background-dark dark:text-gray-300 dark:ring-gray-700 dark:hover:bg-primary/10">
-                        <span class="material-symbols-outlined text-xl">dark_mode</span>
-                    </button>
-                </div>
-                <div class="h-10 w-10 rounded-full bg-cover bg-center" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBeuPd6Bp6LCm9bthP2nQDA9aO3OQB0zZ3Hgj6ovazp36uH9XjrSy4xqlkf3MLPcPqYdCq60ykWEi9bIOLtQfPbunCpjjUqMrAV7DCYd9WgZjfh4xEnByAzJJ84IvIr55WM1ULUJfA4BKwFza3J9-ah1nvG_JvCFIQEcc_B5i6MtjoyuIi519Zc29JtOQQgAo4fhzQIwqEfDUrqxv8Px7X8VLpaUsbnt2DaVz9N8E8fLHXx9enkW77PBwkIwrdGsBM0gVbx_3SUpZjX");'></div>
-            </div>
-        </header>
-        <div class="flex flex-1">
-            <aside class="w-80 border-r border-primary/20 bg-background-light/50 p-4 backdrop-blur-lg dark:bg-background-dark/50">
-                <div class="flex h-full flex-col justify-between">
-                    <div class="flex flex-col gap-4">
-                        <div class="flex items-center gap-3 p-2">
-                            <div class="h-12 w-12 rounded-full bg-cover bg-center" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDJOQpwBoFxfPN1x10O06ThPApDV7mLcxwNXfn7WE1zoThFbS-77ufqB_zWoMOmMDxLCGKe-57YVuDyKmx5hutJnDS4nPdUVpvmq6pwXQRCOQ8nO769EfyLuwdTn15DsGWtwFz48yxR5MpnWzM6UXYBwpW5YzZDEqeYPJC13pIogMkvu1Ko4Oce-rM5_ON6TN2u29lZS0beRS43MnCZA3axJmh6uUHge9r5p7b0D7muMyLcBjvly4yT0HRnTK_QU6FZpcZZAP0tphJF");'></div>
-                            <div>
-                                <h1 class="text-base font-medium text-gray-900 dark:text-white">Ava</h1>
-                                <p class="text-sm font-normal text-gray-600 dark:text-gray-400">Consultant</p>
-                            </div>
-                        </div>
-                        <nav class="flex flex-col gap-2">
-                            <a class="group flex items-center gap-3 rounded-lg bg-primary/20 px-3 py-2 text-primary shadow-[0_0_15px_rgba(6,241,249,0.5)]" href="#">
-                                <span class="material-symbols-outlined">dashboard</span>
-                                <p class="text-sm font-medium">Dashboard</p>
-                            </a>
-                            <a class="group flex items-center gap-3 rounded-lg px-3 py-2 text-gray-700 hover:bg-primary/10 dark:text-gray-300 dark:hover:text-primary dark:hover:bg-primary/20" href="portfolio.html">
-                                <span class="material-symbols-outlined">work</span>
-                                <p class="text-sm font-medium">Portfolio</p>
-                            </a>
-                            <a class="group flex items-center gap-3 rounded-lg px-3 py-2 text-gray-700 hover:bg-primary/10 dark:text-gray-300 dark:hover:text-primary dark:hover:bg-primary/20" href="AI_insights.html">
-                                <span class="material-symbols-outlined">lightbulb</span>
-                                <p class="text-sm font-medium">AI Insights</p>
-                            </a>
-                            <a class="group flex items-center gap-3 rounded-lg px-3 py-2 text-gray-700 hover:bg-primary/10 dark:text-gray-300 dark:hover:text-primary dark:hover:bg-primary/20" href="Market_trends.html">
-                                <span class="material-symbols-outlined">trending_up</span>
-                                <p class="text-sm font-medium">Market Trends</p>
-                            </a>
-                            <a class="group flex items-center gap-3 rounded-lg px-3 py-2 text-gray-700 hover:bg-primary/10 dark:text-gray-300 dark:hover:text-primary dark:hover:bg-primary/20" href="settings.html">
-                                <span class="material-symbols-outlined">settings</span>
-                                <p class="text-sm font-medium">Settings</p>
-                            </a>
-                        </nav>
-                    </div>
-                    <div class="mt-8 flex flex-col gap-4">
-                        <h3 class="text-lg font-bold text-gray-900 dark:text-white">Your Progress</h3>
-                        <div class="flex items-center gap-2">
-                            <span class="material-symbols-outlined text-primary">star</span>
-                            <div class="flex-1">
-                                <div class="flex justify-between text-xs font-medium text-gray-700 dark:text-gray-300">
-                                    <span>Level 5</span>
-                                    <span>75%</span>
-                                </div>
-                                <div class="relative h-2 w-full overflow-hidden rounded-full bg-gray-700 dark:bg-gray-600">
-                                    <div class="absolute h-full w-3/4 bg-primary transition-all duration-500" style="width: 75%;"></div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="flex items-center gap-2">
-                            <span class="material-symbols-outlined text-primary">trophy</span>
-                            <div class="flex-1">
-                                <div class="flex justify-between text-xs font-medium text-gray-700 dark:text-gray-300">
-                                    <span>Achievements</span>
-                                    <span>3/5</span>
-                                </div>
-                                <div class="relative h-2 w-full overflow-hidden rounded-full bg-gray-700 dark:bg-gray-600">
-                                    <div class="absolute h-full w-3/5 bg-primary transition-all duration-500" style="width: 60%;"></div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </aside>
-            <main class="flex-1 overflow-y-auto p-6 @container">
-                <div class="mb-6 flex flex-wrap items-center justify-between gap-4">
-                    <h1 class="text-3xl font-bold tracking-tight text-gray-900 dark:text-white">Welcome back, Ava!</h1>
-                    <div class="flex items-center gap-4">
-                        <button class="flex items-center gap-2 rounded-lg bg-primary px-4 py-2 text-white shadow-lg shadow-primary/40 transition-all hover:bg-primary/80">
-                            <span class="material-symbols-outlined text-base">leaderboard</span>
-                            <span class="text-sm font-bold">Leaderboard</span>
-                        </button>
-                        <button class="flex items-center gap-2 rounded-lg bg-primary px-4 py-2 text-white shadow-lg shadow-primary/40 transition-all hover:bg-primary/80">
-                            <span class="material-symbols-outlined text-base">emoji_events</span>
-                            <span class="text-sm font-bold">My Achievements</span>
-                        </button>
-                    </div>
-                </div>
-
-                <div class="grid grid-cols-1 gap-6 @md:grid-cols-2 @2xl:grid-cols-4">
-                    <div class="rounded-xl border border-primary/20 bg-background-light/50 p-6 shadow-lg shadow-primary/10 backdrop-blur-sm dark:border-primary/30 dark:bg-background-dark/50">
-                        <div class="flex items-center justify-between">
-                            <div>
-                                <p class="text-base font-medium text-gray-700 dark:text-gray-300">Portfolio Value</p>
-                                <p class="text-3xl font-bold text-primary">$125,678</p>
-                                <p class="text-sm font-medium text-green-500">+$2,345 today</p>
-                            </div>
-                            <div class="h-16 w-16 rounded-full bg-primary/10 flex items-center justify-center">
-                                <span class="material-symbols-outlined text-4xl text-primary">account_balance_wallet</span>
-                            </div>
-                        </div>
-                        <div class="mt-4 flex items-center gap-2">
-                            <p class="text-sm font-normal text-gray-600 dark:text-gray-400">Last updated: July 26, 2030</p>
-                        </div>
-                    </div>
-
-                    <div class="rounded-xl border border-primary/20 bg-background-light/50 p-6 shadow-lg shadow-primary/10 backdrop-blur-sm dark:border-primary/30 dark:bg-background-dark/50">
-                        <div class="flex items-center justify-between">
-                            <div>
-                                <p class="text-base font-medium text-gray-700 dark:text-gray-300">Active Trades</p>
-                                <p class="text-3xl font-bold text-gray-900 dark:text-white">12</p>
-                                <p class="text-sm font-medium text-green-500">+1 today</p>
-                            </div>
-                            <div class="h-16 w-16 rounded-full bg-primary/10 flex items-center justify-center">
-                                <span class="material-symbols-outlined text-4xl text-primary">trending_up</span>
-                            </div>
-                        </div>
-                        <div class="mt-4 flex items-center gap-2">
-                            <p class="text-sm font-normal text-gray-600 dark:text-gray-400">Weekly Average: 10</p>
-                        </div>
-                    </div>
-
-                    <div class="rounded-xl border border-primary/20 bg-background-light/50 p-6 shadow-lg shadow-primary/10 backdrop-blur-sm dark:border-primary/30 dark:bg-background-dark/50">
-                        <div class="flex items-center justify-between">
-                            <div>
-                                <p class="text-base font-medium text-gray-700 dark:text-gray-300">Daily Wins</p>
-                                <p class="text-3xl font-bold text-green-500">85%</p>
-                            </div>
-                            <div class="h-16 w-16 rounded-full bg-green-500/10 flex items-center justify-center">
-                                <span class="material-symbols-outlined text-4xl text-green-500">thumb_up</span>
-                            </div>
-                        </div>
-                        <div class="mt-4 flex items-center gap-2">
-                            <p class="text-sm font-normal text-gray-600 dark:text-gray-400">Last 7 Days</p>
-                        </div>
-                    </div>
-
-                    <div class="rounded-xl border border-primary/20 bg-background-light/50 p-6 shadow-lg shadow-primary/10 backdrop-blur-sm dark:border-primary/30 dark:bg-background-dark/50">
-                        <div class="flex items-center justify-between">
-                            <div>
-                                <p class="text-base font-medium text-gray-700 dark:text-gray-300">Market Mastery</p>
-                                <p class="text-3xl font-bold text-gray-900 dark:text-white">Level 7</p>
-                            </div>
-                            <div class="h-16 w-16 rounded-full bg-primary/10 flex items-center justify-center">
-                                <span class="material-symbols-outlined text-4xl text-primary">award_stars</span>
-                            </div>
-                        </div>
-                        <div class="mt-4 flex items-center gap-2">
-                            <p class="text-sm font-normal text-gray-600 dark:text-gray-400">Next Level: 150 XP</p>
-                        </div>
-                    </div>
-                </div>
-
-                <h2 class="mt-8 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">Your Stocks & Gamification</h2>
-                <div class="mt-4 grid grid-cols-1 gap-4 @sm:grid-cols-2 @lg:grid-cols-4">
-                    <div class="group flex flex-col gap-2 rounded-lg border border-primary/10 p-2 transition-all hover:border-primary/50 hover:shadow-lg hover:shadow-primary/20 dark:border-primary/20 dark:hover:border-primary/50">
-                        <div class="relative aspect-square w-full rounded-lg bg-cover bg-center" style='background-image: url("https://tse1.mm.bing.net/th/id/OIP.FV_wFyU19BBJ9FG72LkshAHaHa?rs=1&pid=ImgDetMain&o=7&rm=3");'>
-                            <div class="absolute bottom-2 left-2 flex items-center gap-1 rounded-md bg-black/50 px-2 py-1 backdrop-blur-sm">
-                                <span class="material-symbols-outlined text-sm text-yellow-400">star</span>
-                                <span class="text-xs font-bold text-white">Rare Find</span>
-                            </div>
-                        </div>
-                        <div>
-                            <p class="text-base font-medium text-gray-900 dark:text-white">TCS</p>
-                            <p class="text-sm font-normal text-gray-600 dark:text-gray-400">$3,456</p>
-                            <div class="mt-2 flex items-center gap-1">
-                                <span class="material-symbols-outlined text-xs text-green-500">arrow_upward</span>
-                                <p class="text-xs font-medium text-green-500">+1.5%</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="group flex flex-col gap-2 rounded-lg border border-primary/10 p-2 transition-all hover:border-primary/50 hover:shadow-lg hover:shadow-primary/20 dark:border-primary/20 dark:hover:border-primary/50">
-                        <div class="relative aspect-square w-full rounded-lg bg-cover bg-center" style='background-image: url("https://static.vecteezy.com/system/resources/previews/024/806/527/non_2x/infosys-logo-transparent-free-png.png");'>
-                            <div class="absolute bottom-2 left-2 flex items-center gap-1 rounded-md bg-black/50 px-2 py-1 backdrop-blur-sm">
-                                <span class="material-symbols-outlined text-sm text-blue-400">military_tech</span>
-                                <span class="text-xs font-bold text-white">Veteran</span>
-                            </div>
-                        </div>
-                        <div>
-                            <p class="text-base font-medium text-gray-900 dark:text-white">Infosys</p>
-                            <p class="text-sm font-normal text-gray-600 dark:text-gray-400">$2,890</p>
-                            <div class="mt-2 flex items-center gap-1">
-                                <span class="material-symbols-outlined text-xs text-red-500">arrow_downward</span>
-                                <p class="text-xs font-medium text-red-500">-0.8%</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="group flex flex-col gap-2 rounded-lg border border-primary/10 p-2 transition-all hover:border-primary/50 hover:shadow-lg hover:shadow-primary/20 dark:border-primary/20 dark:hover:border-primary/50">
-                        <div class="relative aspect-square w-full rounded-lg bg-cover bg-center" style='background-image: url("https://media.talentbattle.in/Files/C4U_Images/C4U_BLOG_IMAGES/C4U_BLOG_CATEGORIES_IMAGES/102/tech.png");'>
-                            <div class="absolute bottom-2 left-2 flex items-center gap-1 rounded-md bg-black/50 px-2 py-1 backdrop-blur-sm">
-                                <span class="material-symbols-outlined text-sm text-green-400">achievement</span>
-                                <span class="text-xs font-bold text-white">Top Performer</span>
-                            </div>
-                        </div>
-                        <div>
-                            <p class="text-base font-medium text-gray-900 dark:text-white">Tech Mahindra</p>
-                            <p class="text-sm font-normal text-gray-600 dark:text-gray-400">$1,987</p>
-                            <div class="mt-2 flex items-center gap-1">
-                                <span class="material-symbols-outlined text-xs text-green-500">arrow_upward</span>
-                                <p class="text-xs font-medium text-green-500">+2.1%</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="group flex flex-col gap-2 rounded-lg border border-primary/10 p-2 transition-all hover:border-primary/50 hover:shadow-lg hover:shadow-primary/20 dark:border-primary/20 dark:hover:border-primary/50">
-                        <div class="relative aspect-square w-full rounded-lg bg-cover bg-center" style='background-image: url("https://www.thestatesman.com/wp-content/uploads/2019/05/HCL-1-2.jpg");'>
-                            <div class="absolute bottom-2 left-2 flex items-center gap-1 rounded-md bg-black/50 px-2 py-1 backdrop-blur-sm">
-                                <span class="material-symbols-outlined text-sm text-red-400">star_half</span>
-                                <span class="text-xs font-bold text-white">Risk Alert</span>
-                            </div>
-                        </div>
-                        <div>
-                            <p class="text-base font-medium text-gray-900 dark:text-white">HCLTech</p>
-                            <p class="text-sm font-normal text-gray-600 dark:text-gray-400">$1,567</p>
-                            <div class="mt-2 flex items-center gap-1">
-                                <span class="material-symbols-outlined text-xs text-red-500">arrow_downward</span>
-                                <p class="text-xs font-medium text-red-500">-1.1%</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <h2 class="mt-8 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">AI Advice & Challenges</h2>
-                <div class="mt-4 grid gap-6 @md:grid-cols-2">
-                    <div class="relative flex flex-col justify-end overflow-hidden rounded-xl border border-primary/20 p-6 pt-24 shadow-lg shadow-primary/10 dark:border-primary/30" style='background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.6) 0%, rgba(0, 0, 0, 0) 60%), url("https://lh3.googleusercontent.com/aida-public/AB6AXuC3Dq9e-iDUCuo46_I96RjSYhYIH7eccen5VZm0DetGahSpm1NV_Lwte00viEIrkJEYDoy_8Lqwt1Gc0cbtYtJcfwWK5xluOIMT2y11zKlna_8NsdiJ4sGC1Nsnaq6jfCwE819YI6yvkVi-26WNKzr6u78QvWbliVFFzu758km1mODFPZXhNhhLrI3Zm1-qIJ7Pdo9TVKqDS4mr4BLK0-XfT-Kro9yudrbWrj_dgHi7VoLBqgVy8qWil4j1eq0hFB3jAo7NZM56WxaL"); background-size: cover; background-position: center;'>
-                        <div class="absolute top-4 right-4 flex items-center gap-1 rounded-md bg-primary px-2 py-1">
-                            <span class="material-symbols-outlined text-sm text-white">bolt</span>
-                            <span class="text-xs font-bold text-white">High Impact</span>
-                        </div>
-                        <h3 class="text-3xl font-bold text-white shadow-black/50 [text-shadow:0_2px_4px_var(--tw-shadow-color)]">Buy Recommendation</h3>
-                        <p class="mt-1 max-w-lg text-base font-medium text-white shadow-black/50 [text-shadow:0_1px_2px_var(--tw-shadow-color)]">AI suggests buying TCS for significant growth potential. Complete this trade for +50 XP!</p>
-                        <button class="mt-4 w-fit rounded-lg bg-white px-3 py-1.5 text-sm font-bold text-primary shadow-md transition-all hover:bg-gray-200">Execute Trade</button>
-                    </div>
-                    <div class="relative flex flex-col justify-end overflow-hidden rounded-xl border border-primary/20 p-6 pt-24 shadow-lg shadow-primary/10 dark:border-primary/30" style='background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.6) 0%, rgba(0, 0, 0, 0) 60%), url("https://lh3.googleusercontent.com/aida-public/AB6AXuBpYzK5bkyQcrJA3M4s-4NLJeXGhG9KXFy4PW3K1Q-68EPFE-JQebmWrP6bBEzP4Ld69LTJ9y7aZu5p6RIOkreJxZrCC3OD9OkK-DVLp_2XCD4OA0W2Ub0WhA4OyHc_zp5SffBVDfVdX5Nl-JDkDY8zoCa-bCMIkxtwmYrWXeh62jKTcfW1x1mnquUh_CTlNvswlG9XR2qtfiHBjsk8VtNoEgBBZPvYOAbXWvPxljPhQeDHCNRNAhGLqs5z2kVxHEzTw7WsWN5ewxGW"); background-size: cover; background-position: center;'>
-                        <div class="absolute top-4 right-4 flex items-center gap-1 rounded-md bg-yellow-500 px-2 py-1">
-                            <span class="material-symbols-outlined text-sm text-white">trending_flat</span>
-                            <span class="text-xs font-bold text-white">Stable Market</span>
-                        </div>
-                        <h3 class="text-3xl font-bold text-white shadow-black/50 [text-shadow:0_2px_4px_var(--tw-shadow-color)]">Hold Strategy</h3>
-                        <p class="mt-1 max-w-lg text-base font-medium text-white shadow-black/50 [text-shadow:0_1px_2px_var(--tw-shadow-color)]">Infosys is stable. Hold your position. Earn +25 XP for consistent monitoring!</p>
-                        <button class="mt-4 w-fit rounded-lg bg-white px-3 py-1.5 text-sm font-bold text-primary shadow-md transition-all hover:bg-gray-200">Monitor Stock</button>
-                    </div>
-                    <div class="relative flex flex-col justify-end overflow-hidden rounded-xl border border-primary/20 p-6 pt-24 shadow-lg shadow-primary/10 dark:border-primary/30" style='background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.6) 0%, rgba(0, 0, 0, 0) 60%), url("https://lh3.googleusercontent.com/aida-public/AB6AXuBJyNXW0-nj0ynnFJ5usameP7ARVjssYDmV8ZAO_WJLaUKceWWN3Qima7juZZNg8U1GkbQ_v3HJx7lfHrMhoNvam7U04iO6qcGYb18coNXIi2EFj0p59uQIPt3rO41JvT3xruQ6q3PcVVjv9S0rrKVhMP6kcsjB_claXjf5B_6xGsBqk0Kwnx5QVTz9ni85ph-VefX_QrLQ88qi-22FgaZLy-n0JH9aLcgrE9XFUcDrxHKZ2ttjbYOqZIhqeaADQ6ch29QUQ4phLcjV"); background-size: cover; background-position: center;'>
-                        <div class="absolute top-4 right-4 flex items-center gap-1 rounded-md bg-red-500 px-2 py-1">
-                            <span class="material-symbols-outlined text-sm text-white">warning</span>
-                            <span class="text-xs font-bold text-white">Risk Alert</span>
-                        </div>
-                        <h3 class="text-3xl font-bold text-white shadow-black/50 [text-shadow:0_2px_4px_var(--tw-shadow-color)]">Sell Suggestion</h3>
-                        <p class="mt-1 max-w-lg text-base font-medium text-white shadow-black/50 [text-shadow:0_1px_2px_var(--tw-shadow-color)]">Reduce Tech Mahindra exposure. Complete a rebalancing trade for +75 XP!</p>
-                        <button class="mt-4 w-fit rounded-lg bg-white px-3 py-1.5 text-sm font-bold text-primary shadow-md transition-all hover:bg-gray-200">Rebalance</button>
-                    </div>
-                    <div class="flex items-center justify-center rounded-xl border border-dashed border-primary/30 bg-background-dark/50 p-6 shadow-lg shadow-primary/10 backdrop-blur-sm dark:bg-background-light/50">
-                        <div class="text-center">
-                            <span class="material-symbols-outlined text-5xl text-primary/50">extension</span>
-                            <p class="mt-4 text-lg font-bold text-gray-500 dark:text-gray-400">New Challenge Coming Soon!</p>
-                            <p class="text-sm text-gray-400 dark:text-gray-500">Unlock new rewards and boost your rank.</p>
-                        </div>
-                    </div>
-                </div>
-
-                <h2 class="mt-8 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">Market Performance & Milestones</h2>
-                <div class="mt-4 grid grid-cols-1 gap-4 @md:grid-cols-3">
-                    <div class="rounded-xl border border-primary/20 bg-background-light/50 p-6 shadow-lg shadow-primary/10 backdrop-blur-sm dark:border-primary/30 dark:bg-background-dark/50">
-                        <p class="text-base font-medium text-gray-700 dark:text-gray-300">Overall Market Trend</p>
-                        <p class="text-4xl font-bold text-primary">+12.5%</p>
-                        <div class="mt-1 flex items-center gap-2">
-                            <p class="text-base font-normal text-gray-600 dark:text-gray-400">Last 3 Months</p>
-                            <p class="text-base font-medium text-green-500">+2.3%</p>
-                        </div>
-                        <div class="mt-4 h-48">
-                            <svg fill="none" height="100%" preserveAspectRatio="none" viewBox="-3 0 478 150" width="100%" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M0 109C18.1538 109 18.1538 21 36.3077 21C54.4615 21 54.4615 41 72.6154 41C90.7692 41 90.7692 93 108.923 93C127.077 93 127.077 33 145.231 33C163.385 33 163.385 101 181.538 101C199.692 101 199.692 61 217.846 61C236 61 236 45 254.154 45C272.308 45 272.308 121 290.462 121C308.615 121 308.615 149 326.769 149C344.923 149 344.923 1 363.077 1C381.231 1 381.231 81 399.385 81C417.538 81 417.538 129 435.692 129C453.846 129 453.846 25 472 25V149H326.769H0V109Z" fill="url(#paint0_linear_chart)"></path>
-                                <path d="M0 109C18.1538 109 18.1538 21 36.3077 21C54.4615 21 54.4615 41 72.6154 41C90.7692 41 90.7692 93 108.923 93C127.077 93 127.077 33 145.231 33C163.385 33 163.385 101 181.538 101C199.692 101 199.692 61 217.846 61C236 61 236 45 254.154 45C272.308 45 272.308 121 290.462 121C308.615 121 308.615 149 326.769 149C344.923 149 344.923 1 363.077 1C381.231 1 381.231 81 399.385 81C417.538 81 417.538 129 435.692 129C453.846 129 453.846 25 472 25" stroke="#06f1f9" stroke-linecap="round" stroke-width="3"></path>
-                                <defs>
-                                    <linearGradient gradientUnits="userSpaceOnUse" id="paint0_linear_chart" x1="236" x2="236" y1="1" y2="149">
-                                        <stop stop-color="#06f1f9" stop-opacity="0.3"></stop>
-                                        <stop offset="1" stop-color="#06f1f9" stop-opacity="0"></stop>
-                                    </linearGradient>
-                                </defs>
-                            </svg>
-                        </div>
-                        <div class="flex justify-around">
-                            <p class="text-sm font-bold tracking-wider text-gray-500 dark:text-gray-400">Jul</p>
-                            <p class="text-sm font-bold tracking-wider text-gray-500 dark:text-gray-400">Aug</p>
-                            <p class="text-sm font-bold tracking-wider text-gray-500 dark:text-gray-400">Sep</p>
-                        </div>
-                    </div>
-
-                    <div class="rounded-xl border border-primary/20 bg-background-light/50 p-6 shadow-lg shadow-primary/10 backdrop-blur-sm dark:border-primary/30 dark:bg-background-dark/50">
-                        <p class="text-base font-medium text-gray-700 dark:text-gray-300">Milestone Achieved</p>
-                        <div class="flex items-center gap-4">
-                            <span class="material-symbols-outlined text-6xl text-primary">military_tech</span>
-                            <div>
-                                <p class="text-2xl font-bold text-gray-900 dark:text-white">"Market Navigator"</p>
-                                <p class="text-sm font-normal text-gray-600 dark:text-gray-400">Completed 50 successful trades.</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="rounded-xl border border-primary/20 bg-background-light/50 p-6 shadow-lg shadow-primary/10 backdrop-blur-sm dark:border-primary/30 dark:bg-background-dark/50">
-                        <p class="text-base font-medium text-gray-700 dark:text-gray-300">Weekly Engagement Score</p>
-                        <p class="text-4xl font-bold text-primary">95/100</p>
-                        <div class="mt-4 flex items-center gap-2">
-                            <span class="material-symbols-outlined text-2xl text-green-500">auto_graph</span>
-                            <p class="text-base font-medium text-green-500">+5%</p>
-                            <p class="text-base font-normal text-gray-600 dark:text-gray-400">vs last week</p>
-                        </div>
-                    </div>
-                </div>
-            </main>
-        </div>
-    </div>
+<body class="bg-background-light dark:bg-background-dark font-display text-white antialiased">
+<div class="relative min-h-screen w-full overflow-hidden">
+<div class="background-pattern">
+<svg class="w-48 h-48" fill="none" style="top: 10%; left: 5%; animation-duration: 12s;" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg"><path d="M24 45.8096C19.6865 45.8096 15.4698 44.5305 11.8832 42.134C8.29667 39.7376 5.50128 36.3314 3.85056 32.3462C2.19985 28.361 1.76794 23.9758 2.60947 19.7452C3.451 15.5145 5.52816 11.6284 8.57829 8.5783C11.6284 5.52817 15.5145 3.45101 19.7452 2.60948C23.9758 1.76795 28.361 2.19986 32.3462 3.85057C36.3314 5.50129 39.7376 8.29668 42.134 11.8833C44.5305 15.4698 45.8096 19.6865 45.8096 24L24 24L24 45.8096Z" fill="currentColor"></path></svg>
+<svg class="w-32 h-32" fill="none" style="top: 25%; left: 80%; animation-duration: 8s;" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg"><path d="M24 45.8096C19.6865 45.8096 15.4698 44.5305 11.8832 42.134C8.29667 39.7376 5.50128 36.3314 3.85056 32.3462C2.19985 28.361 1.76794 23.9758 2.60947 19.7452C3.451 15.5145 5.52816 11.6284 8.57829 8.5783C11.6284 5.52817 15.5145 3.45101 19.7452 2.60948C23.9758 1.76795 28.361 2.19986 32.3462 3.85057C36.3314 5.50129 39.7376 8.29668 42.134 11.8833C44.5305 15.4698 45.8096 19.6865 45.8096 24L24 24L24 45.8096Z" fill="currentColor"></path></svg>
+<svg class="w-64 h-64" fill="none" style="top: 70%; left: 15%; animation-duration: 15s;" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg"><path d="M24 45.8096C19.6865 45.8096 15.4698 44.5305 11.8832 42.134C8.29667 39.7376 5.50128 36.3314 3.85056 32.3462C2.19985 28.361 1.76794 23.9758 2.60947 19.7452C3.451 15.5145 5.52816 11.6284 8.57829 8.5783C11.6284 5.52817 15.5145 3.45101 19.7452 2.60948C23.9758 1.76795 28.361 2.19986 32.3462 3.85057C36.3314 5.50129 39.7376 8.29668 42.134 11.8833C44.5305 15.4698 45.8096 19.6865 45.8096 24L24 24L24 45.8096Z" fill="currentColor"></path></svg>
+<svg class="w-24 h-24" fill="none" style="top: 85%; left: 90%; animation-duration: 10s;" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg"><path d="M24 45.8096C19.6865 45.8096 15.4698 44.5305 11.8832 42.134C8.29667 39.7376 5.50128 36.3314 3.85056 32.3462C2.19985 28.361 1.76794 23.9758 2.60947 19.7452C3.451 15.5145 5.52816 11.6284 8.57829 8.5783C11.6284 5.52817 15.5145 3.45101 19.7452 2.60948C23.9758 1.76795 28.361 2.19986 32.3462 3.85057C36.3314 5.50129 39.7376 8.29668 42.134 11.8833C44.5305 15.4698 45.8096 19.6865 45.8096 24L24 24L24 45.8096Z" fill="currentColor"></path></svg>
 </div>
-</body>
-</html>
+<main class="relative z-10 flex flex-col items-center justify-center min-h-screen p-4 md:p-8">
+<div class="text-center mb-8 md:mb-12">
+<div class="inline-block p-4 bg-primary/10 dark:bg-primary/20 rounded-full mb-6 icon-glow floating-icon">
+<div class="w-20 h-20 text-primary">
+<svg fill="none" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg"><path d="M24 45.8096C19.6865 45.8096 15.4698 44.5305 11.8832 42.134C8.29667 39.7376 5.50128 36.3314 3.85056 32.3462C2.19985 28.361 1.76794 23.9758 2.60947 19.7452C3.451 15.5145 5.52816 11.6284 8.57829 8.5783C11.6284 5.52817 15.5145 3.45101 19.7452 2.60948C23.9758 1.76795 28.361 2.19986 32.3462 3.85057C36.3314 5.50129 39.7376 8.29668 42.134 11.8833C44.5305 15.4698 45.8096 19.6865 45.8096 24L24 24L24 45.8096Z" fill="currentColor"></path></svg>
+</div>
+</div>
+<h1 class="text-4xl md:text-5xl font-bold text-gray-200 dark:text-white mb-2">Welcome to Stock Consultant Agent</h1>
+<p class="text-lg text-gray-400 dark:text-gray-300">Track stocks, learn smarter, trade better</p>
+</div>
+<div class="w-full max-w-md bg-white/5 dark:bg-black/20 backdrop-blur-xl border border-primary/20 rounded-xl shadow-2xl shadow-primary/10 p-6 md:p-8">
+<form class="space-y-6">
+<div>
+<label class="block text-sm font-medium text-gray-400 dark:text-gray-300" for="name">Name</label>
+<div class="mt-1">
+<input class="form-input w-full bg-background-light/10 dark:bg-background-dark/20 border-2 border-primary/20 focus:border-primary focus:ring-primary placeholder-gray-500 text-white rounded-lg px-4 py-3 transition duration-300" id="name" name="name" placeholder="Enter your name" type="text"/>
+</div>
+</div>
+<div>
+<label class="block text-sm font-medium text-gray-400 dark:text-gray-300" for="email">Email</label>
+<div class="mt-1">
+<input class="form-input w-full bg-background-light/10 dark:bg-background-dark/20 border-2 border-primary/20 focus:border-primary focus:ring-primary placeholder-gray-500 text-white rounded-lg px-4 py-3 transition duration-300" id="email" name="email" placeholder="Enter your email" type="email"/>
+</div>
+</div>
+<div>
+<label class="block text-sm font-medium text-gray-400 dark:text-gray-300" for="password">Password</label>
+<div class="mt-1">
+<input class="form-input w-full bg-background-light/10 dark:bg-background-dark/20 border-2 border-primary/20 focus:border-primary focus:ring-primary placeholder-gray-500 text-white rounded-lg px-4 py-3 transition duration-300" id="password" name="password" placeholder="Enter your password" type="password"/>
+</div>
+</div>
+<div>
+<label class="block text-sm font-medium text-gray-400 dark:text-gray-300" for="confirm-password">Confirm Password</label>
+<div class="mt-1">
+<input class="form-input w-full bg-background-light/10 dark:bg-background-dark/20 border-2 border-primary/20 focus:border-primary focus:ring-primary placeholder-gray-500 text-white rounded-lg px-4 py-3 transition duration-300" id="confirm-password" name="confirm-password" placeholder="Confirm your password" type="password"/>
+</div>
+</div>
+<div class="!mt-8 space-y-4">
+<button class="w-full bg-primary text-background-dark font-bold py-3 px-4 rounded-lg hover:bg-opacity-90 transform hover:scale-105 transition-all duration-300 shadow-lg shadow-primary/30 hover:shadow-primary/50" type="submit">Register</button>
+<button class="w-full bg-primary/20 dark:bg-primary/30 text-white font-bold py-3 px-4 rounded-lg hover:bg-primary/30 dark:hover:bg-primary/40 transform hover:scale-105 transition-all duration-300" type="button">Login</button>
+</div>
+</form>
+<div class="mt-6">
+<div class="relative">
+<div class="absolute inset-0 flex items-center">
+<div class="w-full border-t border-primary/20"></div>
+</div>
+<div class="relative flex justify-center text-sm">
+<span class="px-2 bg-background-dark/80 text-gray-400">Or continue with</span>
+</div>
+</div>
+<div class="mt-6 grid grid-cols-2 gap-4">
+<a class="w-full inline-flex justify-center py-3 px-4 border border-primary/30 rounded-lg shadow-sm bg-primary/10 hover:bg-primary/20 text-sm font-medium text-white transition-all duration-300" href="#">
+              Google
+            </a>
+<a class="w-full inline-flex justify-center py-3 px-4 border border-primary/30 rounded-lg shadow-sm bg-primary/10 hover:bg-primary/20 text-sm font-medium text-white transition-all duration-300" href="#">
+              GitHub
+            </a>
+</div>
+</div>
+<div class="mt-4 text-center text-sm text-primary/80 h-5">
+</div>
+</div>
+</main>
+</div>
+
+<script>
+  // On page load, check if user is already registered
+  //if(localStorage.getItem("registered") === "true"){
+  //    window.location.href = "Dashboard.html"; // redirect to dashboard
+  //}
+
+  // Grab form and button
+  const form = document.querySelector("form");
+  const loginBtn = document.querySelector("button[type='button']"); // login button
+
+  // Handle registration
+  form.addEventListener("submit", function(e){
+      e.preventDefault();
+      const name = document.getElementById("name").value.trim();
+      const email = document.getElementById("email").value.trim();
+      const password = document.getElementById("password").value;
+      const confirmPassword = document.getElementById("confirm-password").value;
+
+      if(!name || !email || !password || !confirmPassword){
+          alert("Please fill all fields!");
+          return;
+      }
+      if(password !== confirmPassword){
+          alert("Passwords do not match!");
+          return;
+      }
+
+      // Save user info in localStorage (for demo purposes)
+      localStorage.setItem("name", name);
+      localStorage.setItem("email", email);
+      localStorage.setItem("password", password);
+      localStorage.setItem("registered", "true");
+
+      // Redirect to dashboard
+      window.location.href = "Dashboard.html";
+  });
+
+  // Optional: login button redirects to dashboard
+  loginBtn.addEventListener("click", function(){
+      window.location.href = "Dashboard.html";
+  });
+</script>
+
+</body></html>
